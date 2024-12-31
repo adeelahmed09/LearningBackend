@@ -14,10 +14,10 @@ const uploadOnCloudinary = async (localFilePath) => {
         "Error during sending File : Cloud not access the path of file"
       );
     const respose = await cloudinary.uploader.upload(localFilePath, {
-      resource_type: auto,
+      resource_type:"auto",
     });
-    console.log("File is success fully uploaded", respose.url);
-    return respose;
+    fs.unlinkSync(localFilePath)
+    return respose.url;
   } catch (error) {
     fs.unlinkSync(localFilePath);
     return console.log("Error : ",error);

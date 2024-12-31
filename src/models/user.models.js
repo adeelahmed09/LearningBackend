@@ -30,7 +30,6 @@ const userSchema = new mongoose.Schema(
     },
     coverImage: {
       type: String, // We will use cloudnairy url
-      required: true,
     },
     watchHistory: [
       {
